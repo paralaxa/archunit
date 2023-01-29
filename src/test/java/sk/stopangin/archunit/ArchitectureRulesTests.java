@@ -34,40 +34,40 @@ class ArchitectureRulesTests {
 
   @ArchTest
   public static final ArchRule resourcesShouldBeNamedController = classes().that()
-      .resideInAPackage("sk.stopangin.archunit..resource..")
+      .resideInAPackage("..resource..")
       .should().haveSimpleNameEndingWith("Controller")
       .because("Resource's name should end with Controller");
 
 
   @ArchTest
   public static final ArchRule resourcesShouldNotBeTransactional = classes().that()
-      .resideInAPackage("sk.stopangin.archunit..resource..")
+      .resideInAPackage("..resource..")
       .should().notBeAnnotatedWith(Transactional.class)
       .because("Resources should not be transactional");
 
   @ArchTest
   public static final ArchRule resourcesShouldBeAnnotatedRestController = classes().that()
-      .resideInAPackage("sk.stopangin.archunit..resource..")
+      .resideInAPackage("..resource..")
       .should().beAnnotatedWith(RestController.class)
       .because("Resources should be annotated with RestController annotation");
 
   @ArchTest
   public static final ArchRule servicesShouldBeTransactional = classes()
-      .that().resideInAPackage("sk.stopangin.archunit..service..").and().areNotInterfaces()
+      .that().resideInAPackage("..service..").and().areNotInterfaces()
       .should().beAnnotatedWith(Transactional.class)
       .because("Services should be transactional");
 
 
   @ArchTest
   public static final ArchRule servicesShouldUseServiceStereotype = classes()
-      .that().resideInAPackage("sk.stopangin.archunit..service..").and().areNotInterfaces()
+      .that().resideInAPackage("..service..").and().areNotInterfaces()
       .should().beAnnotatedWith(Service.class)
       .because("Services should use @Service stereotype annotation");
 
   @ArchTest
   public static ArchRule serviceShouldNotReturnEntity = priority(
       MEDIUM)
-      .no(methods().that(areInPackage(PackageMatcher.of("sk.stopangin.archunit..service.."))))
+      .no(methods().that(areInPackage(PackageMatcher.of("..service.."))))
       .that(arePublic())
       .should(beAnnotatedWith(Entity.class))
       .because("Service should not return entity, rather return DTO");

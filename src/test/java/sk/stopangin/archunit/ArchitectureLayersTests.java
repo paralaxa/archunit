@@ -15,9 +15,9 @@ class ArchitectureLayersTests {
   public void layerCheck() {
     layeredArchitecture()
         .consideringAllDependencies()
-        .layer("Resource").definedBy("sk.stopangin.archunit..resource..")
-        .layer("Service").definedBy("sk.stopangin.archunit..service..")
-        .layer("Persistence").definedBy("sk.stopangin.archunit..repository..")
+        .layer("Resource").definedBy("..resource..")
+        .layer("Service").definedBy("..service..")
+        .layer("Persistence").definedBy("..repository..")
 
         .whereLayer("Resource").mayNotBeAccessedByAnyLayer()
         .whereLayer("Service").mayOnlyBeAccessedByLayers("Resource")
