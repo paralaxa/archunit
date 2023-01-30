@@ -10,8 +10,13 @@ Service should be transactional <br/>
 Service should use @Service stereotype <br/>
 Service should not return entity <br/>
 
+Only service or repository can access EntityManager <br/>
 
-**Architecture layer's rules:** 
+**Model rules**
+
+Only model can be annotated as Entity
+
+**Architecture layer's rules:**
 
 access:<br/>
 

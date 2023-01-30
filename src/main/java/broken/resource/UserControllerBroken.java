@@ -1,5 +1,7 @@
 package broken.resource;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.List;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +20,8 @@ import sk.stopangin.archunit.repository.UserRepository;
 @RequiredArgsConstructor
 public class UserControllerBroken {
 
+  @PersistenceContext
+  private EntityManager entityManager;
   private final UserRepository userRepository;
 
   @GetMapping("{id}")
@@ -27,6 +31,8 @@ public class UserControllerBroken {
 
   @GetMapping
   public List<User> getAll() {
+
+    entityManager.clear();
     return userRepository.findAll();
   }
 
