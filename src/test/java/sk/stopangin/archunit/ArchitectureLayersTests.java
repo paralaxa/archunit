@@ -8,6 +8,10 @@ import org.junit.jupiter.api.Test;
 
 class ArchitectureLayersTests {
 
+
+  /**
+   * some test
+   */
   private final JavaClasses classes = new ClassFileImporter().importPackages(
       "sk.stopangin.archunit");
 
