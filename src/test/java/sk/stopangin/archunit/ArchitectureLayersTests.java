@@ -10,7 +10,7 @@ class ArchitectureLayersTests {
 
 
   /**
-   * some test
+   * some test 2
    */
   private final JavaClasses classes = new ClassFileImporter().importPackages(
       "sk.stopangin.archunit");
